@@ -39,7 +39,7 @@ const Price = React.forwardRef((props,ref) => {
 return(
 
   <div >
-    <NavBar ref={ref} />
+    <NavBar />
     <div className = "components-wrapper price-component">
            <div className ="section1">
              <h4>Search for your items</h4>
