@@ -1,10 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react/cjs/react.development";
-import { useMemo } from "react";
 import NavBar from "./nav";
-import addtocardicon from "./img/add-to-cart.png"
-import Footer from "./footer";
 
 const Cardd = (props) => {
     let AddedTocartArray = props.props

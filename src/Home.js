@@ -1,12 +1,10 @@
 
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import {BrowserRouter as Router , Link, NavLink, Route , Switch} from "react-router-dom"
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { Route } from "react-router-dom"
+import { useEffect, useRef, useState } from 'react';
 import img from "./img/3caf4c96e3dfd87e588452d9b62cfaa0.jpg"
-import addtocardicon from "./img/add-to-cart.png"
 import NavBar from './nav';
 import Contact from './contact';
 import Price from './price';
@@ -36,7 +34,7 @@ const Home = () => {
   let [accses , setaccses] = useState(false)
   let [AddedTocartArray , setTocartArray] = useState([])
   let history = useHistory();
-  let [iconsrc , seticonsrc] = useState(require("./img/add-to-cart.png").default)
+  
   let [CartNumberIncreamentCounter , setCounter] = useState(0)
   let [counter , setcounter2] = useState(0)
   let priceFromInputRef = useRef()
@@ -425,7 +423,7 @@ let addedtocartofferitem = (e) =>{
             </div>
             {/* check-mark.png */}
           <div className="AddIcon" data-id={ dataItems[item].id}>
-            <img src={iconsrc}  onClick={(e) =>{
+            <img src={require("./img/add-to-cart.png").default}  onClick={(e) =>{
               addedTocart(e)
               CartNumberIncreament()
             }}/>

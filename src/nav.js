@@ -1,12 +1,9 @@
 import {Link , NavLink} from "react-router-dom"
 import { useHistory } from "react-router";
-import React, { Component, useEffect, useRef } from "react";
-import ReactDom from "react-dom";
+import React, {useEffect, useRef } from "react";
 import { useState , useMemo } from "react";
-import Button from "@restart/ui/esm/Button";
-import UseCon from "./bestSeller";
+
 import basket from "./img/5a1d294215f351.6592606815118605460899.png"
-import watch from "./img/2cd43b_70674f11a01e43f19366ee72aee4b8bb_mv2.png"
 import {CardCounterContext} from "./Home"
 import { useContext } from "react";
 import {priceLinkContext} from "./Home"

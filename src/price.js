@@ -1,10 +1,8 @@
 import React from "react";
-import Button from "@restart/ui/esm/Button";
 import { useEffect, useState } from "react"
 import NavBar from "./nav";
 import addtocardicon from "./img/add-to-cart.png"
 import { useRef } from "react/cjs/react.development";
-import useFetch  from "./fetchingdata";
 import Footer from "./footer";
 
 
