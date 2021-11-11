@@ -1,7 +1,7 @@
 import {Link , NavLink} from "react-router-dom"
 import { useHistory } from "react-router";
 import React, {useEffect, useRef } from "react";
-import { useState , useMemo } from "react";
+import { useState  } from "react";
 
 import basket from "./img/5a1d294215f351.6592606815118605460899.png"
 import {CardCounterContext} from "./Home"
@@ -86,13 +86,13 @@ const NavBar  = () => {
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>NavItems</Offcanvas.Title>
+          <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
         <ul className ="sidbar-items ">
         <li><NavLink to = "./">Home</NavLink></li>
         <li><NavLink to = "./contact">Contact</NavLink></li>
-        <li><NavLink to = "./BestSeller" style = {{whiteSpace : "nowrap"}}>Best seller</NavLink></li>
+        <li><NavLink to = "./BestSeller" style = {{whiteSpace : "nowrap"}}>offer items</NavLink></li>
         <li onClick = {resettoallfunc}><NavLink to = "./price">price</NavLink></li>
       </ul>
         </Offcanvas.Body>

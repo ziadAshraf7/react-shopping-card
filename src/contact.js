@@ -1,5 +1,4 @@
 
-import { useHistory, useParams } from "react-router";
 import NavBar from "./nav";
 
 const Contact = (props) => {
