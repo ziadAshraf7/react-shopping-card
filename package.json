@@ -18,10 +18,11 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "CI= react-scripts build"
- },
+    "start": "react-scripts start",
+    "build": "Ci=false&&",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -244,6 +244,7 @@ transform: translateX(14px);
 
 .sec1 .content > div{
   position: absolute;
+  width: 50%;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -746,7 +747,7 @@ white-space: nowrap;
     font-size: 8px;
 }
 .sec1 .content h3 {
-  font-size: 15px;
+  font-size: 12px;
 }
   .see-all-btn Button{
     width: 291px

@@ -25,7 +25,7 @@ const Cardd = (props) => {
  
 return(
     <section className = "sec1">
-      <NavBar ref ={ref} />
+      <NavBar />
       <div className = "components-wrapper cart-comp">
     <div className = "added-items">
       {!accses && <h4 className="d-flex justify-content-center">No items were added to cart</h4>}
