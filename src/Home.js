@@ -472,14 +472,14 @@ let addedtocartofferitem = (e) =>{
   </Route>
 
   <Route path ="/card">
-  <CardProvider value = {CartNumberIncreamentCounter}>
+  <CardProvider value={CartNumberIncreamentCounter}>
     <PriceLinkContextProvider value = {resetToallItems}>
     <Cardd props={AddedTocartArray} props2 = {CartNumberdecrement} props3 = {removeFromCart}    />
    </PriceLinkContextProvider>
     </CardProvider>
   </Route>
 
-  <Route path = "/offer">
+  <Route path="/offer">
   <CardProvider value = {CartNumberIncreamentCounter}>
         <PriceLinkContextProvider value = {resetToallItems}>  
     <Offer props={accses2} props2 = {{CartNumberIncreament , addedtocartofferitem , checkedIcon , uncheckeicon , CartNumberdecrement}} props3={offerItemsArray} />

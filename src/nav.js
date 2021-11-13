@@ -92,7 +92,7 @@ const NavBar  = () => {
         <ul className ="sidbar-items ">
         <li><NavLink to = "./">Home</NavLink></li>
         <li><NavLink to = "./contact">Contact</NavLink></li>
-        <li><NavLink to = "./BestSeller" style = {{whiteSpace : "nowrap"}}>offer items</NavLink></li>
+        <li><NavLink to = "./offer" style = {{whiteSpace : "nowrap"}}>offer items</NavLink></li>
         <li onClick = {resettoallfunc}><NavLink to = "./price">price</NavLink></li>
       </ul>
         </Offcanvas.Body>

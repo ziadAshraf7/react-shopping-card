@@ -8,11 +8,8 @@ import Footer from "./footer";
 
 
 const Price = React.forwardRef((props,ref) => {
-  let [arr , setarr] = useState([])
   let [error , seterror] = useState(false)
-  let [accses , setaccses] = useState(false)
   let {addedTocart , CartNumberIncreament} = props.props2
-  let AddedTocartArray = props.props3
   let {array,accses1} = props.data
 
   let {shuffle , fromTo} = props.props4
@@ -21,8 +18,7 @@ const Price = React.forwardRef((props,ref) => {
   let resetToallItems = props.props5
 
 
- let fromInput = useRef(null)
- let ToInput = useRef(null)
+
 
  useEffect(() =>{
    if(accses1){
