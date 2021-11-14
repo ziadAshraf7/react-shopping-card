@@ -9,7 +9,6 @@ import NavBar from './nav';
 import Contact from './contact';
 import Price from './price';
 import BestSeller from './bestSeller';
-import Cardd from './cart';
 import { useHistory } from 'react-router-dom';
 import useFetch from "./fetchingdata"
 import Footer from './footer';
@@ -466,7 +465,7 @@ let addedtocartofferitem = (e) =>{
     </CardProvider>
   </Route>
 
-  <Route path ="/cart">
+  <Route exact path ="/cart">
   <CardProvider value={CartNumberIncreamentCounter}>
     <PriceLinkContextProvider value = {resetToallItems}>
     <Cart props={AddedTocartArray} props2 = {CartNumberdecrement} props3 = {removeFromCart}    />
