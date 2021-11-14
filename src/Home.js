@@ -9,11 +9,12 @@ import NavBar from './nav';
 import Contact from './contact';
 import Price from './price';
 import BestSeller from './bestSeller';
-import Cardd from './card';
+import Cardd from './cart';
 import { useHistory } from 'react-router-dom';
 import useFetch from "./fetchingdata"
 import Footer from './footer';
 import Offer from './offer';
+import Cart from './cart';
 
 
   export const CardCounterContext = React.createContext()
@@ -455,13 +456,7 @@ let addedtocartofferitem = (e) =>{
        </CardProvider>
         </Route>
 
-        <Route path ="/contact">
-        <CardProvider value = {CartNumberIncreamentCounter}>
-          <PriceLinkContextProvider value = {resetToallItems} >
-         <Contact  />
-         </PriceLinkContextProvider>
-         </CardProvider>
-        </Route>
+     
 
   <Route path="/BestSeller">
   <CardProvider value = {CartNumberIncreamentCounter}>
@@ -471,13 +466,22 @@ let addedtocartofferitem = (e) =>{
     </CardProvider>
   </Route>
 
-  <Route path ="/card">
+  <Route path ="/cart">
   <CardProvider value={CartNumberIncreamentCounter}>
     <PriceLinkContextProvider value = {resetToallItems}>
-    <Cardd props={AddedTocartArray} props2 = {CartNumberdecrement} props3 = {removeFromCart}    />
+    <Cart props={AddedTocartArray} props2 = {CartNumberdecrement} props3 = {removeFromCart}    />
    </PriceLinkContextProvider>
     </CardProvider>
   </Route>
+
+  <Route path ="/contact">
+        <CardProvider value = {CartNumberIncreamentCounter}>
+          <PriceLinkContextProvider value = {resetToallItems} >
+         <Contact  />
+         </PriceLinkContextProvider>
+         </CardProvider>
+        </Route>
+
 
   <Route path="/offer">
   <CardProvider value = {CartNumberIncreamentCounter}>

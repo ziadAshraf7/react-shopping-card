@@ -72,8 +72,8 @@ const NavBar  = () => {
       <div onClick={() => history.push("/price")}> <li onClick = {resettoallfunc}><NavLink to = "./price">price</NavLink></li> </div>
       </ul>
 } 
-      <div to="#" className = "Card col col-2 ">
-      <Link to="./card"><img className = "basket" src = {basket}></img></Link>
+      <div  className = "Card col col-2 ">
+      <Link to ="./cart"><img className = "basket" src={basket}></img></Link>
       <div className="counter" ref={CounterRefNav} style = {{visibility : "hidden"}}>{cardCounter}</div>
       </div>
       {responsiveBtnNavLinks && <div className = "col d-flex justify-content-end align-items-center">
