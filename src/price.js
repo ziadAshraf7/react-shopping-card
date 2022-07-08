@@ -1,100 +1,118 @@
 import React from "react";
 import { useEffect, useState } from "react"
-import NavBar from "./nav";
-import addtocardicon from "./img/add-to-cart.png"
 import { useRef } from "react/cjs/react.development";
-import Footer from "./footer";
+import useShop from "./useShop";
 
 
 
-const Price = React.forwardRef((props,ref) => {
-  let [error , seterror] = useState(false)
-  let {addedTocart , CartNumberIncreament} = props.props2
-  let {array,accses1} = props.data
+const Price = (props) => {
+  const AddedItemIconURL =  require("./img/—Pngtree—shopping cart icon_5060870.png").default
+  const AddItemIconURL = require("./img/add-to-cart.png").default 
+  let ItemsData = props.ItemsData
+  let ItemsDataFilterd = props.ItemsDataFilterd
+  let ItemsDataAccess = props.ItemsDataAccess
+  let FilterItemsDataFunc = props.FilterItemsDataFunc
+  let AddedToCartItemsFunc = props.AddedToCartItemsFunc
 
-  let {shuffle , fromTo} = props.props4
-  
-  let {priceFromInputRef ,priceToInputRef ,shuffleRef}  = ref
-  let resetToallItems = props.props5
+  let {ItemsFilterFunc } = useShop()
+
+  let FromInput = useRef()
+  let ToInput = useRef()
+  let GenderInput = useRef()
+
+  let [FilterError , setFilterError]  = useState(false)
+
+  useEffect(() =>{
+    if(ItemsDataFilterd.length == 0){
+      if(ItemsDataAccess)
+      setFilterError(true)
+    }else{
+      setFilterError(false)
+    }
+  },[ItemsDataFilterd])
 
 
 
 
- useEffect(() =>{
-   if(accses1){
-  if(array.length == 0){
-    seterror(true)
-  }else{
-    seterror(false)
-  }
-}
- },[array.length])
 
 return(
 
-  <div >
-    <NavBar />
-    <div className = "components-wrapper price-component">
-           <div className ="section1">
+  <div className = "components-wrapper" >
+
+{!ItemsDataAccess && <h3 style={{textAlign : "center"}}>Loading...</h3>}
+
+ {ItemsDataAccess &&  <div className = "price-component">
              <h4>Search for your items</h4>
-             <div className = "inp-wrapper">
+             <div className = "inp-wrapper" >
              <div className = "inp1">
                <label>Gender</label>
-               <input type="search" list="search" ref={shuffleRef} defaultValue=""/>
-                 <datalist id = "search" >
+               <input type="search" list="search"  onChange={(e) => GenderInput.current = e.target.value}  defaultValue=""/>
+                 <datalist id = "search"  >
                    <option >male</option>
                    <option>female</option>
                  </datalist>
-               <button className = "search-btn button" onClick = {() =>{
-                if(shuffleRef.current.value == "male" || shuffleRef.current.value == "female" ) {
-                  shuffle(shuffleRef.current.value)
-                }else{
-                  return false
-                }
-               }}>search</button>
-    
              </div>
              <div className = "inp2">
                <label>From</label>
-               <input type="number" ref={priceFromInputRef}></input>
+               <input type="number"  onChange= {(e) => FromInput.current = e.target.value } ></input>
                <label>To</label>
-               <input type="number" ref= {priceToInputRef}></input>
-               <button className = "search-btn button" onClick = {() =>{
-                 fromTo(priceFromInputRef.current.value ,priceToInputRef.current.value)
-               }}>Search</button>
+               <input type="number"  onChange= {(e) => ToInput.current = e.target.value } ></input>
              </div>
-             </div>  
-             <button className = " button" onClick = {resetToallItems}>reset to all items</button>
- 
+            
           </div>
-          </div>
-          {error && <h1>Items not found</h1>}
-          {!accses1 && <h5>Loading...</h5>}
+  <div style = {{display : "flex" , flexDirection : "column" , alignItems : "center"}}>
+  <button className = " button" style={{marginBottom : "20px" , placeItems:"center" }}  onClick={() =>{
+    let FilteredItems = ItemsFilterFunc(ItemsData , GenderInput.current , FromInput.current , ToInput.current )
+   
+    if(!GenderInput.current && !ToInput.current && !FromInput.current){
+      return
+    }
+
+    if(FilteredItems.length > 0){
+      FilterItemsDataFunc(FilteredItems)
+    }else{
+      FilterItemsDataFunc([])
+      setFilterError(true)
+    }
+   
+}}>Search</button>
+   <button className = " button" style={{marginBottom : "10px" }} onClick={() =>{
+     FilterItemsDataFunc(ItemsData)
+     setFilterError(false)
+   }}>reset to all items</button>
+  </div>
+          </div>}
+
+          {FilterError && <h3 style={{textAlign : "center"}}>The Items you have filtered is not Found</h3>}
+
+
           <div className = "items-wrapper">
-               {accses1 && array.map((item) =>{
-               return <div className = "item-package" key={item.id} id ={item.id} type={item.type ? item.type : null}>
+      {ItemsDataAccess && ItemsDataFilterd.map((item,ItemIndex) =>{
+              if(ItemsDataFilterd.length > 0){
+               return <div className = "item-package" key = {item.id}>
                <div className = "img">
-                 <img className = "watch" src={require(`${item.picUrl}`).default}></img>
+                 <img className = "watch"  src={require(`${item.picUrl}`).default}></img>
                </div>
                <div className = "content">
                <h3>{item.name}</h3>
                <h4>{item.price}</h4>
                </div>
                <div className="AddIcon" data-id={item.id}>
-               <img src={addtocardicon} onClick = {(e) =>{
-                  addedTocart(e)
-                  CartNumberIncreament()
+               <img  src={localStorage.getItem(item.id) === "Added" ? AddedItemIconURL : AddItemIconURL } onClick = {() =>{
+                
+              AddedToCartItemsFunc(item)
+            
                }}  />
                </div>
-             </div>
+             </div>}
                }) }
              </div>
-             <Footer />
+           
   </div>
   
 )
     
  
-})
+}
  
 export default Price;

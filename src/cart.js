@@ -3,33 +3,25 @@ import { useEffect, useState } from "react/cjs/react.development";
 import NavBar from "./nav";
 
 const Cart = (props) => {
-    let AddedTocartArray = props.props
-    let [accses , setaccses] = useState(false)
-    let [counter , setcounter] = useState(0)
-    let CartNumberdecrement = props.props2
-    let removeFromCart = props.props3
-  useEffect(() =>{
-    if(AddedTocartArray.length > 0){
-      setaccses(true)
-    }else{
-      setaccses(false)
-    }
-  },[counter])
+    let [EmptyCart, setEmptyCart] = useState(false)
+    let AddedToCartItemsFunc = props.AddedToCartItemsFunc
 
-  let increment = () =>{
-    setcounter((prev) => prev + 1)
-  }
+    const CartItems = [...JSON.parse(localStorage.getItem("cartItems"))]
 
 
- 
+    useEffect(() =>{
+      if(CartItems.length == 0){
+        setEmptyCart(true)
+      }
+    })
+
 return(
     <section className = "sec1">
-      <NavBar />
       <div className = "components-wrapper cart-comp">
     <div className = "added-items">
-      {!accses && <h4 className="d-flex justify-content-center">No items were added to cart</h4>}
-      {accses && AddedTocartArray.map((item) => 
-      <div className="wrapper" key ={item.id} id={item.id}>
+      {EmptyCart && <h4 className="d-flex justify-content-center">No items were added to cart</h4>}
+      {!EmptyCart && CartItems.map(item => {
+    return  <div className="wrapper" key ={item.id}>
       <div className = "package-content">
         <div className = "icon">
           <img src={require(`${item.picUrl}`).default}/>
@@ -40,12 +32,10 @@ return(
           <p>Lorem ipsum dollerr sign set amit kadfn dkf djfbh djghjdfh jgbj</p>
         </div>
       </div>
-      <button className="cart-btn button" onClick = {(e) => {
-      increment()
-      CartNumberdecrement()
-      removeFromCart(e)
+      <button className="cart-btn button" onClick = {() => {
+        AddedToCartItemsFunc(item)
       }}>Remove</button>
-      </div>
+      </div>}
     )}
     </div>
     </div>

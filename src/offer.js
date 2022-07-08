@@ -1,33 +1,20 @@
 import NavBar from "./nav";
 import iconsrc from "./img/add-to-cart.png"
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+import useDataFetching from "./useDataFetching";
 const Offer = (props) => {
-    let {CartNumberIncreament , addedtocartofferitem , checkedIcon , uncheckeicon , CartNumberdecrement} = props.props2
-    let accses2 = props.props
-    let offerItemsArray = props.props3
     let [arr , setarr] = useState([])
-    let [accses , setaccses] = useState(false)
+    const AddedItemIconURL =  require("./img/—Pngtree—shopping cart icon_5060870.png").default
+    const AddItemIconURL = require("./img/add-to-cart.png").default 
+    let {OfferItems , OfferItemsAccses , AddedToCartItemsFunc} = props.props
 
-
-    useEffect(() =>{
-        if(offerItemsArray.length > 0){
-            setarr(offerItemsArray)
-        }
-    },[offerItemsArray.length])
-
-    useEffect(() =>{
-        if(arr.length > 1){
-            setaccses(true)
-        }
-    }, [arr.length])
 
     return ( 
-        <>
-    <NavBar  />
-     <div className="components-wrapper offer-component">
-        {accses && arr.map((item) =>{
-          return <div className = "item-package" key={ item.id } type={item.type} id={ item.id } checked={item.checked}>
-           
+        <div className="components-wrapper">
+         {!OfferItemsAccses && <h3 style={{textAlign : "center"}}>Loading...</h3>} 
+     <div className="offer-component">
+        {OfferItems && OfferItems.length > 0 && OfferItems.map((item , index) =>{
+          return <div className = "item-package" key={ item.id } type={item.type} id={ item.id } checked={item.checked}>     
           <div className = "img">
             <img className = "watch" src={require(`${item.picUrl}`).default}></img>
           </div>
@@ -37,21 +24,15 @@ const Offer = (props) => {
           <h4>{ item.offer }$</h4>
           </div>
         <div className="AddIcon" data-id={item.id}>
-          <img src={require(`${item.src}`).default}  onClick={(e) =>{
-             if(e.target.closest(".item-package").checked === false){
-            addedtocartofferitem(e)
-            CartNumberIncreament()
-            checkedIcon(e)
-             }else{
-                uncheckeicon(e)
-                CartNumberdecrement()
-             }
+          <img src={localStorage.getItem(item.id) === "Added" ? AddedItemIconURL : AddItemIconURL }  onClick={(e) =>{
+           AddedToCartItemsFunc(item)
           }}/>
           </div> 
         </div>
         })}
+     
         </div>
-        </>
+        </div>
      );
 }
  

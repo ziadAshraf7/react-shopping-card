@@ -50,6 +50,13 @@ solid #092020;
     font-weight: 900;
 }
 
+.nav .nav-lists a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .nav .nav-lists > div{
   height: 100%;
@@ -116,8 +123,8 @@ flex-direction: column;
     height: 1px
 ;
 width: 26px
-;
-;
+
+
 }
 
 
@@ -500,6 +507,8 @@ transition: all 0.3s;
  .see-all-btn Button{
   width: 430px;
   padding: 10px;
+  background-color: #022e2e;
+  color: white;
 }
 
 
@@ -515,16 +524,16 @@ transition: all 0.3s;
 
 .price-component  .inp-wrapper{
   display: flex;
-  justify-content: center;
-  column-gap: 110px
+  justify-content: center
 ;
-margin-bottom: 31px
+margin: 30px  0 30px 0
 ;
 }
 
 
 .inp1 , .inp2{
 white-space: nowrap;
+
 }
 
 .price-component  .inp-wrapper input{
@@ -654,6 +663,9 @@ white-space: nowrap;
   }
   .sec1 .content > h1{
     font-size: 29px;
+  }
+  .nav .nav-lists > div li{ 
+    font-size: 13px;
   }
   }
 
