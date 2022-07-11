@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react/cjs/react.development";
-import NavBar from "./nav";
 
 const Cart = (props) => {
     let [EmptyCart, setEmptyCart] = useState(false)
