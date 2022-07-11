@@ -1,5 +1,5 @@
 {
-  "homepage": "https://zen-hoover-355ae9.netlify.app",
+  "homepage": "http://ziadAshraf7.github.io/First-React-project",
   "name": "dojo-blog",
   "version": "0.1.0",
   "private": true,
@@ -44,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
