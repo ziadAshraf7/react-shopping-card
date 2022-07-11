@@ -73,8 +73,8 @@ useEffect(() =>{
   <Router>
 
   <NavBar cartItemsNumber = {cartItemsNumber} />  
-  {<Route path='' element={<Navigate to = "../home" />}  />}
   <Routes>
+  {<Route path='' element={<Navigate to = "../home" />}  />}
 
   
  <Route  path = "home" element = { <UserHome OfferItems = {OfferItems}   AddedToCartItemsFunc = {AddedToCartItemsFunc}    RandomFilteredItemsData={RandomFilteredItemsData} ItemsDataAccess={ItemsDataAccess} ItemsData = {ItemsData}/>} />
