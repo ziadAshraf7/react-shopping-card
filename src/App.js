@@ -70,7 +70,7 @@ useEffect(() =>{
  return (
    <div >
 
-  <Router>
+  <Router basename="/index.html">
 
   <NavBar cartItemsNumber = {cartItemsNumber} />  
   <Routes>
