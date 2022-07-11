@@ -1,5 +1,4 @@
 {
-  "homepage": "http://ziadshraf7.github.io/First-React-project",
   "name": "dojo-blog",
   "version": "0.1.0",
   "private": true,
@@ -11,7 +10,7 @@
     "@testing-library/user-event": "^12.5.0",
     "bootstrap": "^5.1.3",
     "netlify-lambda": "^2.0.15",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-bootstrap": "^2.0.0",
     "react-dom": "^18.2.0",
     "react-router": "^5.2.1",
