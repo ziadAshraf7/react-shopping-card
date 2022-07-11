@@ -42,7 +42,7 @@ const NavBar  = (props) => {
      <div className = "row rr">
       <div className = "icon col col-6 col-5 d-flex align-items-center"><h4><span>I</span> Watch</h4></div>
     {!BasketIconAccses &&  <ul className ="col-4 col-5 nav-lists d-flex ">
-      <div > <li><NavLink  to = "/"> Home </NavLink></li> </div>
+      <div > <li><NavLink  to = "/home"> Home </NavLink></li> </div>
       <div> <li><NavLink to = "/contact">Contact</NavLink></li> </div>
       <div > <li><NavLink to = "/offer" style = {{whiteSpace : "nowrap"}}>offer items</NavLink></li> </div>
       <div > <li ><NavLink to = "/price">price</NavLink></li> </div>
@@ -65,7 +65,7 @@ const NavBar  = (props) => {
         </Offcanvas.Header>
         <Offcanvas.Body>
         <ul className ="sidbar-items " onClick={() => setShow(false)}>
-        <li><Link to = "/">Home</Link></li>
+        <li><Link to = "/home">Home</Link></li>
         <li><Link to = "/contact">Contact</Link></li>
         <li><Link to = "/offer" style = {{whiteSpace : "nowrap"}}>offer items</Link></li>
         <li><Link to = "/price">price</Link></li>
