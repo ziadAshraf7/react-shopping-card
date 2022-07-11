@@ -1,4 +1,9 @@
+import NavBar from "./nav";
+import iconsrc from "./img/add-to-cart.png"
+import { Suspense, useEffect, useState } from "react";
+import useDataFetching from "./useDataFetching";
 const Offer = (props) => {
+    let [arr , setarr] = useState([])
     const AddedItemIconURL =  require("./img/—Pngtree—shopping cart icon_5060870.png").default
     const AddItemIconURL = require("./img/add-to-cart.png").default 
     let {OfferItems , OfferItemsAccses , AddedToCartItemsFunc} = props.props

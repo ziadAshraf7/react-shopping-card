@@ -1,6 +1,7 @@
 
 import {useNavigate } from "react-router-dom"
 
+const Links = ["https://fake-server-apppppp.herokuapp.com/items" , "https://fake-server-apppppp.herokuapp.com/offer"]
 
 
  
