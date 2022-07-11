@@ -70,11 +70,11 @@ useEffect(() =>{
  return (
    <div >
 
-  <Router basename="/index.html">
+  <Router basename="/React">
 
   <NavBar cartItemsNumber = {cartItemsNumber} />  
   <Routes>
-  {<Route path='' element={<Navigate to = "../home" />}  />}
+  {<Route path="" element={<Navigate to = "../home" />}  />}
 
   
  <Route  path = "home" element = { <UserHome OfferItems = {OfferItems}   AddedToCartItemsFunc = {AddedToCartItemsFunc}    RandomFilteredItemsData={RandomFilteredItemsData} ItemsDataAccess={ItemsDataAccess} ItemsData = {ItemsData}/>} />
