@@ -76,7 +76,7 @@ useEffect(() =>{
   <Routes>
   {<Route path="" element={<Navigate to = "../home" />}  />}
 
-  
+  <h1>hello</h1>
  <Route  path = "home" element = { <UserHome OfferItems = {OfferItems}   AddedToCartItemsFunc = {AddedToCartItemsFunc}    RandomFilteredItemsData={RandomFilteredItemsData} ItemsDataAccess={ItemsDataAccess} ItemsData = {ItemsData}/>} />
 
 
