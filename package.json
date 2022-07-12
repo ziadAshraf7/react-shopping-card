@@ -1,5 +1,4 @@
 {
-  "homepage": "http://app.netlify.com/sites/zen-hoover-355ae9/deploys/62cd76f97ae8d60009c25b94",
   "name": "dojo-blog",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI = '' npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
