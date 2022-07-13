@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import {BrowserRouter as Router   , Routes , Route, Navigate } from "react-router-dom"
+import {BrowserRouter as Router   , Routes , Route } from "react-router-dom"
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -70,13 +70,13 @@ useEffect(() =>{
  return (
    <div >
 
-  {/* <Router>
+  <Router>
 
-  <NavBar cartItemsNumber = {cartItemsNumber} />  
+  <NavBar cartItemsNumber = {cartItemsNumber} />     
+
   <Routes>
-  {<Route path="" element={<Navigate to = "../home" />}  />}
 
- <Route  path = "home" element = { <UserHome OfferItems = {OfferItems}   AddedToCartItemsFunc = {AddedToCartItemsFunc}    RandomFilteredItemsData={RandomFilteredItemsData} ItemsDataAccess={ItemsDataAccess} ItemsData = {ItemsData}/>} />
+ <Route  path = "" element = { <UserHome OfferItems = {OfferItems}   AddedToCartItemsFunc = {AddedToCartItemsFunc}    RandomFilteredItemsData={RandomFilteredItemsData} ItemsDataAccess={ItemsDataAccess} ItemsData = {ItemsData}/>} />
 
 
  <Route path = "price" element = { <Price  AddedToCartItemsFunc = {AddedToCartItemsFunc}    RandomFilteredItemsData={RandomFilteredItemsData} ItemsData = {ItemsData} ItemsDataFilterd={ItemsDataFilterd} ItemsDataAccess={ItemsDataAccess} FilterItemsDataFunc = {FilterItemsDataFunc}  />} />
@@ -96,8 +96,7 @@ useEffect(() =>{
   </Routes>
  </Router>
 
- <Footer /> */}
- <h1>Hello</h1>
+ <Footer />
  </div>
  )
 
