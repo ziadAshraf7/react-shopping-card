@@ -76,7 +76,7 @@ useEffect(() =>{
 
   <Routes>
 
- <Route  path = "" element = { <UserHome OfferItems = {OfferItems}   AddedToCartItemsFunc = {AddedToCartItemsFunc}    RandomFilteredItemsData={RandomFilteredItemsData} ItemsDataAccess={ItemsDataAccess} ItemsData = {ItemsData}/>} />
+ <Route  path = "/" element = { <UserHome OfferItems = {OfferItems}   AddedToCartItemsFunc = {AddedToCartItemsFunc}    RandomFilteredItemsData={RandomFilteredItemsData} ItemsDataAccess={ItemsDataAccess} ItemsData = {ItemsData}/>} />
 
 
  <Route path = "price" element = { <Price  AddedToCartItemsFunc = {AddedToCartItemsFunc}    RandomFilteredItemsData={RandomFilteredItemsData} ItemsData = {ItemsData} ItemsDataFilterd={ItemsDataFilterd} ItemsDataAccess={ItemsDataAccess} FilterItemsDataFunc = {FilterItemsDataFunc}  />} />
