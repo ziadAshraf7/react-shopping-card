@@ -1,5 +1,5 @@
 {
-  "homepage": ".",
+  "homepage": "http://ziadAshraf7.github.io/First-React-project",
   "name": "dojo-blog",
   "version": "0.1.0",
   "private": true,
@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0",
     "react-router": "^5.2.1",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.0",
+    "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -44,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
