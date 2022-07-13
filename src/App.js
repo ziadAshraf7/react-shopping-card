@@ -70,7 +70,7 @@ useEffect(() =>{
  return (
    <div >
 
-  <Router>
+  {/* <Router>
 
   <NavBar cartItemsNumber = {cartItemsNumber} />  
   <Routes>
@@ -96,7 +96,8 @@ useEffect(() =>{
   </Routes>
  </Router>
 
- <Footer />
+ <Footer /> */}
+ <h1>Hello</h1>
  </div>
  )
 
