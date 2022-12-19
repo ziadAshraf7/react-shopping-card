@@ -1,0 +1,5 @@
+all Cat : https://api.escuelajs.co/api/v1/categories
+products by cat : https://api.escuelajs.co/api/v1/categories/1/products
+all products : https://api.escuelajs.co/api/v1/products
+get single product : https://api.escuelajs.co/api/v1/products/1
+pagination : https://api.escuelajs.co/api/v1/products?offset=0&limit=10
