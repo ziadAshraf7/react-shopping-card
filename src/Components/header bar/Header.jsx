@@ -7,6 +7,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
+import {
+    useQuery,
+  } from 'react-query'
 import { getCategories } from "../../Api/Api";
 import { useContext, useEffect, useState } from 'react';
 import { CardContext } from '../../Contexts/Context';
@@ -40,7 +43,7 @@ function Header({
         <Select
         sx = {theme => {return{
           backgroundColor : "white" , 
-          width : "250px" , 
+          width : ["100px","250px"] , 
           height : "35px"
         }}}
         onChange={handleCategoryId}
