@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
 import { useStyles } from './cardModalStyles';
 import Grid from '@mui/material/Grid';
 import CardItem from '../cardItem/cardItem';
